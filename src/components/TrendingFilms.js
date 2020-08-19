@@ -8,7 +8,7 @@ class TrendingFilms extends React.Component{
 	}
 
 	componentDidMount(){
-		const apikey = "API-KEY-HERE";
+		const apikey = "PUT-API-KEY";
 		const url = "https://api.themoviedb.org/3/trending/movie/week?api_key=";
 		const poster_url = "https://image.tmdb.org/t/p/w154";
 		const full_url = url + apikey;
