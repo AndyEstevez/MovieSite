@@ -3,8 +3,8 @@ import './css/App.css';
 import Searchbar from './components/Searchbar.js'
 import TrendingFilms from './components/TrendingFilms.js'
 
-class App extends Component {
-  render(){
+function App() {
+  
     return (
       <div className="App">
         <Searchbar/>
@@ -12,7 +12,7 @@ class App extends Component {
       </div>
       );
     }
-}
+
 
 
 
