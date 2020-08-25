@@ -8,7 +8,7 @@ function App() {
     return (
       <div className="App">
         <Searchbar/>
-        <TrendingFilms/>
+        <div className='main'><TrendingFilms/></div>
       </div>
       );
     }

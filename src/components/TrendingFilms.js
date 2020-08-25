@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../css/TrendingFilms.css';
+import {api_url, poster_url, api_key} from './config'; 
 
 class TrendingFilms extends React.Component{
 	constructor(){
@@ -8,10 +9,8 @@ class TrendingFilms extends React.Component{
 	}
 
 	componentDidMount(){
-		const apikey = "API-KEY-HERE";
-		const url = "https://api.themoviedb.org/3/trending/movie/week?api_key=";
-		const poster_url = "https://image.tmdb.org/t/p/w154";
-		const full_url = url + apikey;
+		
+		const full_url = api_url + api_key;
 
 		const request = async () => {
 			const response = await fetch(full_url)
@@ -29,14 +28,15 @@ class TrendingFilms extends React.Component{
 
 	getTrendingFilms() {
 		const films = this.state.trendingFilms;
+
 		return( 
 			
 				films.map(function(movie){
 					return(
 						<div className="card" key = {movie.title} > 
-							<img src = {"https://image.tmdb.org/t/p/w154" + movie.poster_path} />
+							<img src = {`${poster_url}${movie.poster_path}`}/>
 							<div> { movie.vote_average + "/10" }</div>
-							<div> { movie.title }</div>
+							<div className="title"> { movie.title }</div>
 							<div> { movie.release_date.substring(0, 4) }</div>
 						</div>)
 				})

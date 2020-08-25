@@ -1,26 +1,23 @@
 .container{
-	width: 154px;
-  	flex-wrap: wrap;
-  	position: absolute;
-	display: grid;
-    grid-template-rows: repeat(2, 400px);
-    grid-gap: 150px;
-    grid-row-gap: 50px;
-    grid-template-columns: repeat(5, 1fr);
-    padding-left: 225px;
-    padding-top: 15px;
+  vertical-align: middle;
+  display: flex;
+  
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 75%;
+  height: 475px;
+  margin-left: 225px;
 }
 
-.container .card{
-	 margin: 10px;
-	 background: #A9A9A9;
-	 flex-wrap: flex;
-	 height: 360px;
-	 max-height: 500px;
-}
+
 
 .card{
-	margin: 1rem;
-	width: 154px;
-	position: relative;
+  height: 200px;
+  width: 180px;
+  font-size: 19px;
+  line-height: 25px; 
+  text-align: middle;
+  margin: 30px;  
 }
+
+
