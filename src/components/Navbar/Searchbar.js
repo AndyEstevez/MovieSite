@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavMenuItems }  from './NavBarMenuItems';
-import "../css/NavigationBar.css";
+import "../../css/NavigationBar.css";
 
 class SearchBar extends Component {
   render(){

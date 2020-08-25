@@ -1,33 +1,33 @@
-import React, { Component } from "react";
-import '../css/TrendingFilms.css';
-import {trendingFilms_url, poster_url, api_key} from './config'; 
+import React, { Component } from 'react'
+import {topRatedFilms_url, poster_url, api_key} from './config'; 
+import '../css/TopRatedFilms.css';
 
-class TrendingFilms extends React.Component{
-	constructor(){
+export default class TopRatedFilms extends Component {
+    constructor(){
 		super();
-		this.state = { trendingFilms: [] };
+		this.state = { topRatedFilms: [] };
 	}
 
-	componentDidMount(){
+    componentDidMount(){
 		
-		const full_url = trendingFilms_url + api_key;
+		const full_url = topRatedFilms_url + api_key;
 
 		const request = async () => {
 			const response = await fetch(full_url)
 				.then(response => response.json())
-				.then((data) => this.setState({ trendingFilms: data.results.slice(0, 20)}));
+				.then((data) => this.setState({ topRatedFilms: data.results.slice(0, 20)}));
 		}
 
 		request();
 	}
 
-	render() {
-		const getFunction = this.getTrendingFilms();
+    render() {
+        const getFunction = this.getTopRatedFilms();
 		return <div className="container">{ getFunction }</div>;
-	}
+    }
 
-	getTrendingFilms() {
-		const films = this.state.trendingFilms;
+    getTopRatedFilms() {
+		const films = this.state.topRatedFilms;
 
 		return( 
 			
@@ -43,11 +43,3 @@ class TrendingFilms extends React.Component{
 			);
 	}
 }
-
-export default TrendingFilms;
-
-
-
-
-
-

@@ -1,7 +1,6 @@
 .container{
   vertical-align: middle;
   display: flex;
-  
   overflow-x: auto;
   overflow-y: auto;
   width: 75%;

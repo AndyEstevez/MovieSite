@@ -2,7 +2,17 @@
   
 }
 
-.main{
- 
+.trending{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-left: 250px;
+}
+
+.topRated{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-left: 250px;
 }
 
