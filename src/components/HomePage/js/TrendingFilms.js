@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import '../css/TrendingFilms.css';
-import {trendingFilms_url, poster_url, api_key} from './config'; 
+import {trendingFilms_url, poster_url, api_key} from '../../config'; 
 
 class TrendingFilms extends React.Component{
 	constructor(){
@@ -26,6 +26,7 @@ class TrendingFilms extends React.Component{
 		return <div className="container">{ getFunction }</div>;
 	}
 
+	
 	getTrendingFilms() {
 		const films = this.state.trendingFilms;
 
@@ -34,7 +35,7 @@ class TrendingFilms extends React.Component{
 				films.map(function(movie){
 					return(
 						<div className="card" key = {movie.title} > 
-							<img src = {`${poster_url}${movie.poster_path}`}/>
+							<img src = {`${poster_url}${movie.poster_path}`} alt={movie.title} />
 							<div> { movie.vote_average + "/10" }</div>
 							<div className="title"> { movie.title }</div>
 							<div> { movie.release_date.substring(0, 4) }</div>
@@ -43,6 +44,7 @@ class TrendingFilms extends React.Component{
 			);
 	}
 }
+
 
 export default TrendingFilms;
 

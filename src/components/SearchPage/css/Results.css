@@ -1,0 +1,69 @@
+.container{
+    display: grid;
+    grid-template-rows: repeat(0, 513px);
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+.card{
+    
+    height: 513px;
+    width: 100%;
+   
+}
+
+.break{
+    height: 3px;
+    background-color: #000000;
+    width: 100%;
+}
+
+.poster{
+    height: 513px;
+    margin-left: -1050px;
+    margin-top: 27px;
+    margin-bottom: 100px;
+    border-spacing: 500px;
+    width: 342px;
+}
+
+.rating{
+  display: inline-block;
+  position: absolute;
+  margin-top: 27px;
+  margin-left: 20px;
+  font-size: 24px;
+
+}
+
+.title{  
+    display: inline-block;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 24px;
+
+}
+
+.release{  
+    display: inline-block;
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 20px;
+    font-size: 24px;
+  
+}
+
+.overview{
+    display: inline-block;
+    position: absolute;
+    margin-top: 235px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    vertical-align: middle;
+    width: 1020px;
+}
+

@@ -1,17 +1,17 @@
 export const NavMenuItems = [
 		{
 			label: 'Home',
-			url: '#',
+			url: '/',
 			className: 'nav-links'
 		},
 		{
 			label: 'Trending',
-			url: '#',
+			url: '/trending',
 			className: 'nav-links'
 		},
 		{
 			label: 'Top Rated',
-			url: '#',
+			url: '/top-rated',
 			className: 'nav-links'
 		}
 ]

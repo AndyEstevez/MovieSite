@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import './css/App.css';
-import Searchbar from './components/Navbar/Searchbar.js'
-import TrendingFilms from './components/TrendingFilms.js'
-import TopRatedFilms from './components/TopRatedFilms.js'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from './components/HomePage/js/HomePage';
+import SearchPage from './components/SearchPage/js/SearchPage'
 
 function App() {
   
     return (
-      <div className="App">
-        <Searchbar/>
-        <div className='trending'>What's Trending</div>
-          <TrendingFilms/>
-        <div className="topRated">Top Rated</div>
-          <TopRatedFilms/>
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage}/> 
+          <Route exact path="/search" component={SearchPage}/>
+        </Switch>
       </div>
       );
     }
