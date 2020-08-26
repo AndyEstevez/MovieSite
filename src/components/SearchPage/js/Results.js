@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { poster_url_large, search_url, api_key } from '../../config'; 
-import '../css/Results.css'
+import searchResults from '../css/Results.module.css'
 function Results() {
 
     const [Searches, setSearch] = useState([])
@@ -24,17 +24,19 @@ function Results() {
     }
     
     
-    return (<div className="container">
+    return (<div className={searchResults.container}>
        { Searches.map(function(movie){
           
             return(
-                <div className="card" key = {movie.title}> 
-                     <div className="break"></div>
-                    <img src = {`${poster_url_large}${movie.poster_path}`} alt={movie.title} className="poster"/>
-                    <div className="rating"> { movie.vote_average + "/10" } </div>
-                    <div className="title"> { movie.title } </div>
-                    <div className="release"> { movie.release_date } </div>
-                    <div className="overview"> { movie.overview } </div>
+                <div className={searchResults.card} key = {movie.title}> 
+                     <div className={searchResults.break}></div>
+                     <a href={`/movie/${movie.id}`}>
+                    <img src = {`${poster_url_large}${movie.poster_path}`} alt={movie.title} className={searchResults.poster}/>
+                    </a>
+                    <div className={searchResults.rating}> { movie.vote_average + "/10" } </div>
+                    <div className={searchResults.title}> { movie.title } </div>
+                    <div className={searchResults.release}> { movie.release_date } </div>
+                    <div className={searchResults.overview}> { movie.overview } </div>
                 </div>
                 )
 

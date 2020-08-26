@@ -33,8 +33,10 @@ export default class TopRatedFilms extends Component {
 			
 				films.map(function(movie){
 					return(
-						<div className="card" key = {movie.title} > 
+						<div className="card" key = {movie.title}> 
+							<a href={`/movie/${movie.id}`} >
 							<img src = {`${poster_url}${movie.poster_path}`} alt={movie.title}/>
+							</a>
 							<div> { movie.vote_average + "/10" }</div>
 							<div className="title"> { movie.title }</div>
 							<div> { movie.release_date.substring(0, 4) }</div>

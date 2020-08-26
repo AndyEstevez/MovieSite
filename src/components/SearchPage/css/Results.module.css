@@ -8,22 +8,22 @@
 }
 
 .card{
-    
-    height: 513px;
+    height: 550px;
     width: 100%;
-   
 }
 
 .break{
     height: 3px;
     background-color: #000000;
-    width: 100%;
+    width: 75%;
+    margin-top: 25px;
+    margin-left: 250px;
 }
 
 .poster{
     height: 513px;
     margin-left: -1050px;
-    margin-top: 27px;
+    margin-top: 17px;
     margin-bottom: 100px;
     border-spacing: 500px;
     width: 342px;
@@ -35,7 +35,6 @@
   margin-top: 27px;
   margin-left: 20px;
   font-size: 24px;
-
 }
 
 .title{  
