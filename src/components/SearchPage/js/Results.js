@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { poster_url_large, search_url, api_key } from '../../config'; 
-import searchResults from '../css/Results.module.css'
-function Results() {
+import searchResults from '../css/Results.module.css';
 
+function Results({searchQuery}) {
     const [Searches, setSearch] = useState([])
-
-    const query = "The"
-
+    const query = searchQuery
+    
     useEffect(() => {
         const endpoint = `${search_url}${api_key}&query=${query}&page=1`;
         fetchMovies(endpoint)
@@ -21,6 +20,7 @@ function Results() {
             })
         
             console.log(endpoint);
+             console.log(query);
     }
     
     
@@ -41,13 +41,8 @@ function Results() {
                 )
 
         })}
-        </div>
-				
-				
+        </div>	
     )
-    
 }
-
-
 
 export default Results

@@ -32,7 +32,7 @@
 .rating{
   display: inline-block;
   position: absolute;
-  margin-top: 27px;
+  margin-top: 15px;
   margin-left: 20px;
   font-size: 24px;
 }
@@ -40,7 +40,7 @@
 .title{  
     display: inline-block;
     position: absolute;
-    margin-top: 50px;
+    margin-top: 75px;
     margin-left: 20px;
     font-size: 24px;
 
@@ -49,7 +49,7 @@
 .release{  
     display: inline-block;
     position: absolute;
-    margin-top: 75px;
+    margin-top: 135px;
     margin-left: 20px;
     font-size: 24px;
   
@@ -58,9 +58,9 @@
 .overview{
     display: inline-block;
     position: absolute;
-    margin-top: 235px;
+    margin-top: 255px;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     vertical-align: middle;
     width: 1020px;
