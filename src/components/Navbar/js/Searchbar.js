@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { NavMenuItems }  from './NavBarMenuItems';
-
 import "../css/NavigationBar.css";
-import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
 	state = {
