@@ -19,8 +19,8 @@ function Results({searchQuery}) {
                 setSearch([...Searches, ...response.results])
             })
         
-            console.log(endpoint);
-             console.log(query);
+            // console.log(endpoint);
+            // console.log(query);
     }
     
     

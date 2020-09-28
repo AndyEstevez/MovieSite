@@ -45,7 +45,7 @@ function Movie({movieId}) {
                     <div className={movieStyle.release}>{Movie.release_date}</div>
                 </div>
 
-                {!LoadingForMovie ? 
+   
                 <div>
                     <div className={movieStyle.header}>Recommended Movies</div>
                 <div className={movieStyle.recommended}>
@@ -64,8 +64,8 @@ function Movie({movieId}) {
                         )
                     })}
                 </div>
-                </div>  :
-                <div></div>}
+                </div>  
+                
                 
                 
                 
