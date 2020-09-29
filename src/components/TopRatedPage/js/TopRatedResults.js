@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import topratedCSS from '../css/TopRatedResults.module.css';
 
 
-const pageNum = 1;
+var pageNum = 1;
 
 function TopRatedResults() {
     
@@ -27,9 +27,9 @@ function TopRatedResults() {
     }
 
     function loadMoreMovies(){
-       
-        console.log("Load More")
-
+        console.log("Page Number = " + pageNum)
+        const endpoint = `${topRatedFilms_url}${api_key}&page=${pageNum += 1}`;
+        fetchMovies(endpoint)
     }
 
     return (<div>

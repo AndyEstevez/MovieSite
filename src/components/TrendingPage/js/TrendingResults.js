@@ -2,12 +2,12 @@ import { poster_url_large, trendingFilms_url, api_key } from '../../config';
 import React, { useState, useEffect } from 'react';
 import trendingCSS from '../css/TrendingResults.module.css';
 
-const pageNum = 1;
+var pageNum = 1;
 
 function TrendingResults() {
     
     const [Films, setFilms] = useState([])
-    
+
     useEffect(() => {
         const endpoint = `${trendingFilms_url}${api_key}&page=${pageNum}`;
         fetchMovies(endpoint)
@@ -20,14 +20,15 @@ function TrendingResults() {
             .then(response => response.json())
             .then(response => {
                 setFilms([...Films, ...response.results])
+                console.log(response.results)
             })
-    
-          console.log(Films)
     }
 
     function loadMoreMovies(){
-       
-        console.log("Load More")
+        //pageNum += 1;
+        console.log("Page Number = " + pageNum)
+        const endpoint = `${trendingFilms_url}${api_key}&page=${pageNum += 1}`;
+        fetchMovies(endpoint)
 
     }
 
