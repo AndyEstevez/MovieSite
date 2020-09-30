@@ -1,9 +1,12 @@
 
+/* Movie Section */
+.movie_container{
+    padding-bottom: 100px;
+}
 .poster{
     margin-left: 350px;
     margin-top: 50px;
 }
-
 .title{
     position: absolute;
     top: 50px;
@@ -44,20 +47,51 @@
     left: 750px;
 }
 
-.header{
+
+/* Actors Section */
+.actorHeader{
     margin-left: 350px;
-    padding-top: 300px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.actor_container{
+    vertical-align: middle;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 60%;
+    height: 440px;
+    margin-left: 350px;
+}
+.actor_card{
+    margin-top: 25px;
+}
+.avatar{
+    height: 300px;
+}
+.actorName{
+    font-weight: bold;
+}
+
+
+/* Recommended Section */
+.recHeader{
+    margin-left: 350px;
+    padding-top: 100px;
     padding-bottom: 25px;
     font-weight: bold;
     font-size: 24px;
 }
-
 .recommended{
     vertical-align: middle;
     display: flex;
     overflow-x: auto;
     overflow-y: auto;
     width: 60%;
-    height: 400px;
+    height: 435px;
     margin-left: 350px;
+}
+.recommendedTitle{
+    font-weight: bold;
+    font-size: 18px;
 }
