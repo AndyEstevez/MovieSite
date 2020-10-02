@@ -1,51 +1,59 @@
 
 /* Movie Section */
 .movie_container{
-    padding-bottom: 100px;
+    padding-bottom: 10px;
+}
+.movie_header{
+    position: relative;
+    top: -520px;
+    left: 750px;
+    display: flex;
+    flex-direction: row;
+}
+.movie_header2{
+    position: relative;
+    top: -520px;
+    left: 750px;
+    display: flex;
+    flex-direction: row;
 }
 .poster{
     margin-left: 350px;
     margin-top: 50px;
 }
 .title{
-    position: absolute;
-    top: 50px;
-    left: 750px;
-    width: 15%;
-    display: inline-block;
+    font-weight: bold;
+    font-size: 24px;
 }
-.overview{
+.release{
+    position: relative;
+    top: 9px;
+    left: 10px;
+}
+.runtime{
     position: absolute;
-    top: 150px;
+    top: 49px;
+}
+.rating{
+    position: relative;
+    top: 59px;
+    left: 0px;
+    font-weight: bold;
+}
+.votes{
+    position: relative;
+    top: 59px;
+    left: 5px;
+} 
+.overview{
+    position: relative;
+    top: -350px;
     left: 750px;
     width: 35%;
 }
-.runtime{
-    display: inline-block;
-    position: absolute;
-    top: 50px;
-    left: 1050px;
-}
-.rating{
-    position: absolute;
-    top: 100px;
-    left: 750px;
-}
-.votes{
-    position: absolute;
-    top: 300px;
-    left: 750px;
-}
-.tagline{
-    position: absolute;
-    top: 350px;
-    left: 750px;
-}
-.release{
-    position: absolute;
-    top: 400px;
-    left: 750px;
-}
+
+
+
 
 
 /* Actors Section */
@@ -72,6 +80,16 @@
 .actorName{
     font-weight: bold;
 }
+.seeMore{
+    position: relative;
+    font-weight: bold;
+    height: 40px;
+    bottom: -380px;
+    left: -115px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
 
 
 /* Recommended Section */

@@ -18,6 +18,7 @@ function Movie({movieId}) {
             .then(details => details.json())
             .then(details => { console.log(details)
                 setMovie(details)
+                
 
                 const recommendedEndpoint = `${basic_url}${movieId}/similar?api_key=${api_key}&language=en-US&page=1`;    
                 fetch(recommendedEndpoint)
@@ -35,21 +36,33 @@ function Movie({movieId}) {
                     })
             })
     }
+    
   
         return (
             <div>
                 <div className={movieStyle.movie_container}>
                     <img className={movieStyle.poster} src={`${poster_url_large}${Movie.poster_path}`} alt={Movie.title} />
                     
-                    <div className={movieStyle.container}>
+
+                    <div className={movieStyle.movie_header}>
                         <div className={movieStyle.title}>{Movie.title}</div>
-                        <div className={movieStyle.overview}>{Movie.overview}</div>
-                        <div className={movieStyle.runtime}>{Movie.runtime}m</div>
-                        <div className={movieStyle.rating}>{Movie.vote_average}/10</div>
-                        <div className={movieStyle.votes}>{Movie.vote_count} ratings</div>
-                        <div className={movieStyle.tagline}>Tagline: {Movie.tagline}</div>
                         <div className={movieStyle.release}>{Movie.release_date}</div>
+                        <div className={movieStyle.runtime}>{Movie.runtime}m</div>
                     </div>
+                    
+
+                    <div className={movieStyle.movie_header2}>
+                        <div className={movieStyle.rating}>{Movie.vote_average}/10</div>
+                        <div className={movieStyle.votes}>| {Movie.vote_count} votes</div>
+                    </div> 
+
+                    <div>
+                        <div className={movieStyle.overview}>{Movie.overview}</div>
+                    </div>
+
+                   
+
+
                 </div>
 
                 
@@ -65,7 +78,11 @@ function Movie({movieId}) {
                             </div>
                         )
                     })}
-                   
+                            <div className={movieStyle.seeMore}>
+                                <a href={`/movie/${movieId}/fullcredits`}>
+                                    <div>See Full Cast </div>
+                                </a>
+                            </div>
                 </div>
 
 
