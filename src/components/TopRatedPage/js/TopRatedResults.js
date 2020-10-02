@@ -44,7 +44,7 @@ function TopRatedResults() {
                             </a>
                             <div className={topratedCSS.rating} > { movie.vote_average + "/10" } </div>
                             <div className={topratedCSS.title}> { movie.title } </div>
-                            <div className={topratedCSS.release}> { movie.release_date } </div>
+                            <div className={topratedCSS.release}> { String(movie.release_date).substring(0, 4) } </div>
                             </div>
                         )
                     })}

@@ -44,7 +44,7 @@ function TrendingResults() {
                             </a>
                             <div className={trendingCSS.rating} > { movie.vote_average + "/10" } </div>
                             <div className={trendingCSS.title}> { movie.title } </div>
-                            <div className={trendingCSS.release}> { movie.release_date } </div>
+                            <div className={trendingCSS.release}> { String(movie.release_date).substring(0, 4) } </div>
                             </div>
                         )
                     })}

@@ -52,6 +52,15 @@
     width: 35%;
 }
 
+.director{
+    position: absolute;
+    top: 400px;
+}
+.writer{
+    position: absolute;
+    top: 450px;
+}
+
 
 
 

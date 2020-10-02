@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { poster_url, poster_url_large, profile_url, movieId_url, basic_url, api_key } from '../../config'; 
 import movieStyle from '../css/Movie.module.css'
 
+
 function Movie({movieId}) {
     const [Movie, setMovie] = useState([])
     const [Similar, setSimilar] = useState([])
     const [Actors, setActors] = useState([])
     const [Crew, setCrew] = useState([])
+
 
     useEffect(() => {
         const movieEndpoint = `${movieId_url}${movieId}?api_key=${api_key}&language=en-US`;
@@ -19,7 +21,6 @@ function Movie({movieId}) {
             .then(details => { console.log(details)
                 setMovie(details)
                 
-
                 const recommendedEndpoint = `${basic_url}${movieId}/similar?api_key=${api_key}&language=en-US&page=1`;    
                 fetch(recommendedEndpoint)
                     .then(similar => similar.json())
@@ -33,11 +34,42 @@ function Movie({movieId}) {
                     .then(crew => {
                         setActors(crew.cast.slice(0, 10))
                         setCrew(crew.crew)
+                          
                     })
             })
     }
-    
-  
+
+   
+            
+      
+    console.log(Crew)  
+    var dir = new Array();
+    var writer = new Array();
+
+    function getDirector(Crew){
+        Crew.map((element) => {
+            if(element.department === "Directing" && element.job === "Director"){
+                
+                dir.push(element.name)
+            }
+           
+        })
+        return -1;
+    }
+
+    function getWriter(Crew){
+        Crew.map((element) => {
+            if(element.department === "Writing"){
+                writer.push(element.name)
+            }
+        })
+        return -1;
+    }
+
+    getDirector(Crew);
+    getWriter(Crew);
+
+
         return (
             <div>
                 <div className={movieStyle.movie_container}>
@@ -46,23 +78,21 @@ function Movie({movieId}) {
 
                     <div className={movieStyle.movie_header}>
                         <div className={movieStyle.title}>{Movie.title}</div>
-                        <div className={movieStyle.release}>{Movie.release_date}</div>
+                        <div className={movieStyle.release}>{String(Movie.release_date).substring(0, 4)}</div>
                         <div className={movieStyle.runtime}>{Movie.runtime}m</div>
+                        <div className={movieStyle.director}>Director: {dir.join(', ')}</div>
+                        <div className={movieStyle.writer}>Writer: {writer.join(', ')}</div>
                     </div>
                     
-
                     <div className={movieStyle.movie_header2}>
                         <div className={movieStyle.rating}>{Movie.vote_average}/10</div>
                         <div className={movieStyle.votes}>| {Movie.vote_count} votes</div>
                     </div> 
 
+
                     <div>
                         <div className={movieStyle.overview}>{Movie.overview}</div>
                     </div>
-
-                   
-
-
                 </div>
 
                 
@@ -98,7 +128,7 @@ function Movie({movieId}) {
                                 </a>
                                 <div className={movieStyle.recommendedTitle}>{movie.title}</div>
                                 <div>{movie.vote_average}</div>
-                                <div>{movie.release_date}</div>
+                                <div>{movie.release_date.substring(0, 4)}</div>
                                 
                             </div>
                         )
