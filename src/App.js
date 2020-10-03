@@ -6,6 +6,7 @@ import SearchPage from './components/SearchPage/js/SearchPage';
 import MoviePage from './components/MoviePage/js/MoviePage';
 import TrendingPage from './components/TrendingPage/js/TrendingPage';
 import TopRatedPage from './components/TopRatedPage/js/TopRatedPage';
+import FullCreditsPage from './components/FullCreditsPage/js/FullCreditsPage';
 
 function App(props) {
     
@@ -14,10 +15,11 @@ function App(props) {
         <SearchBar/>
         <Switch>
           <Route exact path="/" component={HomePage} /> 
-          <Route exact path="/search/:searchQuery" component={SearchPage}/>
-          <Route exact path="/movie/:id" component={MoviePage}/>
           <Route exact path="/trending" component={TrendingPage}/>
           <Route exact path="/top-rated" component={TopRatedPage}/>
+          <Route exact path="/search/:searchQuery" component={SearchPage}/>
+          <Route exact path="/movie/:id" component={MoviePage}/>
+          <Route exact path="/movie/:id/fullcredits" component={FullCreditsPage}/>
         </Switch>
       </div>
       );

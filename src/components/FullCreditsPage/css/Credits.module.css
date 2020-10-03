@@ -1,0 +1,33 @@
+.actorHeader{
+    margin-left: 350px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.actor_container{
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+}
+.actor_card{
+    position: relative;
+    left: 600px;
+    margin-top: 25px;
+}
+.avatar{
+    position: relative;
+    top: 50px;
+    height: 100px;
+    width: 67px;
+}
+.actorName{
+    position: relative;
+    left: 90px;
+    top: -15px;
+    font-weight: bold;
+}
+.characterName{
+    position: relative;
+    left: 550px;
+    top: -36px;
+}
