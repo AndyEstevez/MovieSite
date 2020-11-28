@@ -6,8 +6,7 @@
 .actor_container{
     overflow-x: hidden;
     overflow-y: hidden;
-
-
+    padding-bottom: 200px;
 }
 .actor_card{
     position: relative;
@@ -19,15 +18,16 @@
     top: 50px;
     height: 100px;
     width: 67px;
+    margin: -35px;
 }
 .actorName{
     position: relative;
     left: 90px;
-    top: -15px;
+    top: 15px;
     font-weight: bold;
 }
 .characterName{
     position: relative;
     left: 550px;
-    top: -36px;
+    top: -6px;
 }

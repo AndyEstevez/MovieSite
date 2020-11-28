@@ -101,8 +101,8 @@ function Movie({movieId}) {
                 <div className={movieStyle.actor_container}>
                     {Actors.map(function(actor){
                         return(
-                            <div className={movieStyle.actor_card}>
-                                <img className={movieStyle.avatar} src={`${profile_url}${actor.profile_path}`} />
+                            <div className={movieStyle.actor_card} key={actor.name}>
+                                <img className={movieStyle.avatar} src={`${profile_url}${actor.profile_path}`} alt={actor.name}/>
                                 <div className={movieStyle.actorName}>{actor.name}</div>
                                 <div className={movieStyle.characterName}>{actor.character}</div>
                             </div>

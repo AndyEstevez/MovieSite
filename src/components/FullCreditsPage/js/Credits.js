@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { poster_url, poster_url_large, profile_url, movieId_url, basic_url, api_key } from '../../config'; 
+import { profile_url, basic_url, api_key } from '../../config'; 
 import crewStyle from '../css/Credits.module.css';
 
 function Credits({movieId}) {
@@ -19,8 +19,11 @@ function Credits({movieId}) {
         .then(crew => {
             setActors(crew.cast)
             setCrew(crew.crew)
+            console.log(crew.crew)
         })
     }
+
+
     function getAvatar(image){
         const pic = `${profile_url}${(image)}`;
         if(image == null){
@@ -34,8 +37,8 @@ function Credits({movieId}) {
                 <div className={crewStyle.actor_container}>
                     {Actors.map(function(actor){
                         return(
-                            <div className={crewStyle.actor_card}>
-                                <img className={crewStyle.avatar} src={getAvatar(actor.profile_path)}/>
+                            <div className={crewStyle.actor_card} key={actor.name}>
+                                <img className={crewStyle.avatar} src={getAvatar(actor.profile_path)} alt={actor.name}/>
                                 <div className={crewStyle.actorName}>{actor.name}</div>
                                 <div className={crewStyle.characterName}>{actor.character}</div>
                             </div>
