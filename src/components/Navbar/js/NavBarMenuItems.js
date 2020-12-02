@@ -1,3 +1,5 @@
+
+// creating the tabs for the navigation bar: 'Home', 'Trending', 'Top Rated'
 export const NavMenuItems = [
 		{
 			label: 'Home',

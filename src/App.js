@@ -13,7 +13,8 @@ function App(props) {
     return (
       <div>
         <SearchBar/>
-        <Switch>
+        <Switch> 
+          {/* Routing to all possible pages with components using React Router Dom*/}
           <Route exact path="/" component={HomePage} /> 
           <Route exact path="/trending" component={TrendingPage}/>
           <Route exact path="/top-rated" component={TopRatedPage}/>

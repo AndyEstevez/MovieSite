@@ -8,6 +8,8 @@ class TrendingFilms extends React.Component{
 		this.state = { trendingFilms: [] };
 	}
 
+	// API request to get trending films 
+	// assigning the result to the state object "trendingFilms"
 	componentDidMount(){
 		
 		const full_url = trendingFilms_url + api_key;
@@ -31,7 +33,8 @@ class TrendingFilms extends React.Component{
 		const films = this.state.trendingFilms;
 
 		return( 
-			
+			// looping through "trendingFilms" which holds the response from the API request
+			// return a new card for each movie that holds: title, poster, ratings, release date
 				films.map(function(movie){
 					return(
 						<div className="card" key = {movie.title}> 

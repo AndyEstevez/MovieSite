@@ -14,6 +14,8 @@ function TrendingResults() {
         console.log("Trending Results page " + endpoint)
     }, [])
 
+
+    // API request to get trending movies and set the hook to the response results
     const fetchMovies = (endpoint) =>  {
 
         fetch(endpoint)
@@ -24,6 +26,8 @@ function TrendingResults() {
             })
     }
 
+    // function for when the user clicks load more button and update the url to fetch the next page
+    // increment the page starting at 1
     function loadMoreMovies(){
         //pageNum += 1;
         console.log("Page Number = " + pageNum)
@@ -34,6 +38,8 @@ function TrendingResults() {
 
     return (<div>
                 <div className={trendingCSS.container}>
+                    {/* Looping through the state hook 'Films' 
+                    // and create a card for each movie that holds: title, release date, poster, ratings*/}
                     { Films.map(function(movie){
           
                         return(

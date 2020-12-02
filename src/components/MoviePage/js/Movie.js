@@ -4,6 +4,8 @@ import movieStyle from '../css/Movie.module.css'
 
 
 function Movie({movieId}) {
+    // creating all the state hooks 
+    // we need to display for a movie: Details on Movie, Similar Movies, Actors, and rest of Crew 
     const [Movie, setMovie] = useState([])
     const [Similar, setSimilar] = useState([])
     const [Actors, setActors] = useState([])
@@ -15,6 +17,7 @@ function Movie({movieId}) {
         fetchMovies(movieEndpoint)
     }, [])
 
+    // All the API requests to set the state hooks to their specific response results: Movie, Crew, & Recommended
     const fetchMovies = (movieEndpoint) => {
         fetch(movieEndpoint)
             .then(details => details.json())
@@ -39,13 +42,11 @@ function Movie({movieId}) {
             })
     }
 
-   
-            
-      
     console.log(Crew)  
     var dir = new Array();
     var writer = new Array();
 
+    // function to find the director(s) of the movie
     function getDirector(Crew){
         Crew.map((element) => {
             if(element.department === "Directing" && element.job === "Director"){
@@ -57,6 +58,7 @@ function Movie({movieId}) {
         return -1;
     }
 
+    // function to find the writer(s) of the movie
     function getWriter(Crew){
         Crew.map((element) => {
             if(element.department === "Writing"){
@@ -69,13 +71,12 @@ function Movie({movieId}) {
     getDirector(Crew);
     getWriter(Crew);
 
-
         return (
             <div>
                 <div className={movieStyle.movie_container}>
+                    {/* Movie Details Section */}
                     <img className={movieStyle.poster} src={`${poster_url_large}${Movie.poster_path}`} alt={Movie.title} />
                     
-
                     <div className={movieStyle.movie_header}>
                         <div className={movieStyle.title}>{Movie.title}</div>
                         <div className={movieStyle.release}>{String(Movie.release_date).substring(0, 4)}</div>
@@ -89,16 +90,16 @@ function Movie({movieId}) {
                         <div className={movieStyle.votes}>| {Movie.vote_count} votes</div>
                     </div> 
 
-
                     <div>
                         <div className={movieStyle.overview}>{Movie.overview}</div>
                     </div>
                 </div>
 
-                
+                {/* Actors Section */}
                 <div className={movieStyle.actorHeader}>Billed Cast</div>
 
                 <div className={movieStyle.actor_container}>
+                    {/* Looping through the state hook 'Actors' to create a card for each actor */}
                     {Actors.map(function(actor){
                         return(
                             <div className={movieStyle.actor_card} key={actor.name}>
@@ -115,11 +116,11 @@ function Movie({movieId}) {
                             </div>
                 </div>
 
-
+                {/* Recommended Movies Section */}
                 <div className={movieStyle.recommended_container}>
                     <div className={movieStyle.recHeader}>Recommended Movies</div>
                 <div className={movieStyle.recommended}>
-                    
+                    {/* Looping through the state hook 'Similar' to create a card for each similar movie */}
                     {Similar.map(function(movie){
                         return(
                             <div className={movieStyle.recMovie} key={movie.title}>
@@ -128,17 +129,12 @@ function Movie({movieId}) {
                                 </a>
                                 <div className={movieStyle.recommendedTitle}>{movie.title}</div>
                                 <div>{movie.vote_average}</div>
-                                <div>{movie.release_date.substring(0, 4)}</div>
-                                
+                                <div>{movie.release_date.substring(0, 4)}</div>                
                             </div>
                         )
                     })}
                 </div>
                 </div>  
-                
-                
-                
-                
             </div>
         )
 }

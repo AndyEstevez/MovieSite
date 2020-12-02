@@ -15,6 +15,8 @@ function TopRatedResults() {
         console.log("Trending Results page " + endpoint)
     }, [])
 
+    // function to fetch the top rated films from API &
+    // set the hook to the response results
     const fetchMovies = (endpoint) =>  {
 
         fetch(endpoint)
@@ -26,6 +28,8 @@ function TopRatedResults() {
           console.log(Films)
     }
 
+    // used for when the user clicks the load more button
+    // increment the page number starting from 1 and fetch the next page of top rated films from API
     function loadMoreMovies(){
         console.log("Page Number = " + pageNum)
         const endpoint = `${topRatedFilms_url}${api_key}&page=${pageNum += 1}`;
@@ -34,6 +38,8 @@ function TopRatedResults() {
 
     return (<div>
                 <div className={topratedCSS.container}>
+                    {/* looping through the hook and creating a grid of movies that hold
+                    // title, release date, poster, ratings*/}
                     { Films.map(function(movie){
           
                         return(

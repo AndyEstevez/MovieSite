@@ -13,6 +13,8 @@ function Credits({movieId}) {
         fetchCrew(crewEndpoint)
     }, [])
 
+    // API request to get the actors and rest of the crew and
+    // set the state hooks 'Actors & Crew' to the response results
     const fetchCrew = (crewEndpoint) => {
         fetch(crewEndpoint)
         .then(crew => crew.json())
@@ -23,7 +25,8 @@ function Credits({movieId}) {
         })
     }
 
-
+    // function to check if the actor has a profile picture
+    // if they don't its set to a blank picture
     function getAvatar(image){
         const pic = `${profile_url}${(image)}`;
         if(image == null){
@@ -35,6 +38,7 @@ function Credits({movieId}) {
         return (
             <div>
                 <div className={crewStyle.actor_container}>
+                    {/* Looping through the state hook 'Actors' and creating a card for each actor in the movie*/}
                     {Actors.map(function(actor){
                         return(
                             <div className={crewStyle.actor_card} key={actor.name}>
